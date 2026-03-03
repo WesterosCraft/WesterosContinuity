@@ -62,6 +62,7 @@ public class BasicConnectingCtmProperties extends BaseCtmProperties {
 			ConnectionPredicate tagPredicate = new TagConnectionPredicate(connectTag);
 			ConnectionPredicate statePredicate = new StateConnectionPredicate(connectStateNames);
     	connectionPredicate = new CompositeConnectionPredicate(tagPredicate, statePredicate);
+			return;
 		}
 		if (connectTag != null) {
 			connectionPredicate = new TagConnectionPredicate(connectTag);
