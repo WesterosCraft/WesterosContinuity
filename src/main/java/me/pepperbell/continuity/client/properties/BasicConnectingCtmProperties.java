@@ -159,8 +159,10 @@ public class BasicConnectingCtmProperties extends BaseCtmProperties {
       for (String stateName : stateNames) {
       	Property<?> property = block.getStateManager().getProperty(stateName);
       	if (property == null) return false;
+      	Property<?> otherProperty = otherAppearanceState.getBlock().getStateManager().getProperty(stateName);
+      	if (otherProperty == null) return false;
         Comparable<?> valueA = appearanceState.get(property);
-        Comparable<?> valueB = otherAppearanceState.get(property);
+        Comparable<?> valueB = otherAppearanceState.get(otherProperty);
         if (!valueA.equals(valueB)) return false;
       }
       return true;
